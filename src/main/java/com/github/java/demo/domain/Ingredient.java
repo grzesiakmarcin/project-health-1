@@ -2,6 +2,7 @@ package com.github.java.demo.domain;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -30,5 +31,108 @@ public class Ingredient {
     @ManyToMany
     Set<Meal> meals = new HashSet<>();
 
+    public Long getId() {
+        return id;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCalories() {
+        return calories;
+    }
+
+    public void setCalories(String calories) {
+        this.calories = calories;
+    }
+
+    public Double getProtein() {
+        return protein;
+    }
+
+    public void setProtein(Double protein) {
+        this.protein = protein;
+    }
+
+    public Double getFats() {
+        return fats;
+    }
+
+    public void setFats(Double fats) {
+        this.fats = fats;
+    }
+
+    public Double getCarbs() {
+        return carbs;
+    }
+
+    public void setCarbs(Double carbs) {
+        this.carbs = carbs;
+    }
+
+    public Double getSalt() {
+        return salt;
+    }
+
+    public void setSalt(Double salt) {
+        this.salt = salt;
+    }
+
+    public Double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Double weight) {
+        this.weight = weight;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public Set<Meal> getMeals() {
+        return meals;
+    }
+
+    public void setMeals(Set<Meal> meals) {
+        this.meals = meals;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ingredient)) return false;
+        Ingredient that = (Ingredient) o;
+        return id.equals(that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Ingredient{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", calories='" + calories + '\'' +
+                ", protein=" + protein +
+                ", fats=" + fats +
+                ", carbs=" + carbs +
+                ", salt=" + salt +
+                ", weight=" + weight +
+                ", category='" + category + '\'' +
+                ", meals=" + meals +
+                '}';
+    }
 }
