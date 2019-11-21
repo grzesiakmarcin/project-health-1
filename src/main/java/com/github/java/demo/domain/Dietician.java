@@ -23,7 +23,7 @@ public class Dietician {
     private String lastName;
 
     @OneToMany(mappedBy = "mainDoctor")
-    Set<Client> clientSet = new HashSet<>();
+    Set<Patient> patientSet = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -61,12 +61,12 @@ public class Dietician {
         this.lastName = lastName;
     }
 
-    public Set<Client> getClientSet() {
-        return clientSet;
+    public Set<Patient> getPatientSet() {
+        return patientSet;
     }
 
-    public void setClientSet(Set<Client> clientSet) {
-        this.clientSet = clientSet;
+    public void setPatientSet(Set<Patient> patientSet) {
+        this.patientSet = patientSet;
     }
 
     @Override
@@ -90,7 +90,7 @@ public class Dietician {
                 ", licenceNumber='" + licenceNumber + '\'' +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", clientSet=" + clientSet +
+                ", clientSet=" + patientSet +
                 '}';
     }
 }

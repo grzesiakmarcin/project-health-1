@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity(name = "patients")
-public class Client {
+public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,9 +33,8 @@ public class Client {
     @ManyToOne
     private Dietician mainDoctor;
 
-    @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "patient")
     private Set<Progress> progressSet = new HashSet<>();
-
 
     public Long getId() {
         return id;
@@ -124,9 +123,9 @@ public class Client {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Client)) return false;
-        Client client = (Client) o;
-        return id.equals(client.id);
+        if (!(o instanceof Patient)) return false;
+        Patient patient = (Patient) o;
+        return id.equals(patient.id);
     }
 
     @Override

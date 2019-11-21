@@ -22,7 +22,7 @@ public class Progress {
     private String commentary;
 
     @ManyToOne
-    private Client client;
+    private Patient patient;
 
     public Long getId() {
         return id;
@@ -69,12 +69,12 @@ public class Progress {
         this.commentary = commentary;
     }
 
-    public Client getClient() {
-        return client;
+    public Patient getPatient() {
+        return patient;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 
     @Override
@@ -99,7 +99,7 @@ public class Progress {
                 ", height=" + height +
                 ", targerWeight=" + targerWeight +
                 ", commentary='" + commentary + '\'' +
-                ", client=" + client +
+                ", client=" + patient +
                 '}';
     }
 }
